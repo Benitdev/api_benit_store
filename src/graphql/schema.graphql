@@ -1,0 +1,49 @@
+type Product {
+  _id: ID!
+  name: String
+  slug: String
+  category: String
+  childrenCategory: String
+  imageDefault: String
+  images: [String]
+  price: Int
+  rating: Float
+  numReviews: Int
+  countInStock: [CountInStock]
+  description: String
+  reviews: [Review]
+  isFeatured: Boolean
+  isSlide: Boolean
+  createdAt: String
+  updatedAt: String
+}
+
+type CountInStock {
+  size: Int
+  count: Int
+}
+
+type Review {
+  user: ID!
+  name: String
+  rating: Float
+  comment: String
+}
+
+type Query {
+  products(
+    category: String
+    style: String
+    gender: String
+    size: [Int]
+    search: String
+    isSlide: Boolean
+    isDiscount: Boolean
+    isBestSale: Boolean
+    isNew: Boolean
+    isTopRate: Boolean
+    limit: Int
+    skip: Int
+  ): [Product!]
+  productDetail(slug: String!): Product
+}
