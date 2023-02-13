@@ -6,7 +6,6 @@ import express, { Request, Response, NextFunction } from "express"
 
 import "express-async-errors"
 
-// import BaseRouter from "./routes/api"
 import logger from "jet-logger"
 import EnvVars from "@src/declarations/major/EnvVars"
 import HttpStatusCodes from "@src/declarations/major/HttpStatusCodes"
