@@ -9,7 +9,7 @@ type Body = {
 export const checkQuantity = async (req: Request, res: Response) => {
   try {
     console.log(req.body)
-    const { _id, size, quantity }: Body = req.body
+    const { _id, size, quantity } = req.body as Body
     const product = await Product.findById(_id)
     const existProductSize = product?.countInStock.find(
       (item) => item.size == size
